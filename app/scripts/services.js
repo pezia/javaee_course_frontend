@@ -4,7 +4,7 @@ var qualysoftWebshopServices = angular.module('qualysoftWebshopServices', ['ngRe
 
 qualysoftWebshopServices.factory('ProductService', ['$resource',
     function($resource) {
-        return $resource('product/:productId', {}, {
+        return $resource('http://localhost:8080/QualysoftWebshop-war/rest/product/:productId', {}, {
             query: {method: 'GET', params: {productId: ''}, isArray: true}
         });
     }]);
