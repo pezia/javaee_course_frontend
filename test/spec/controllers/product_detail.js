@@ -11,7 +11,7 @@ describe('Controller: ProductsCtrl', function() {
     function setupContext(id) {
         inject(function(_$httpBackend_, $controller, $rootScope) {
             $httpBackend = _$httpBackend_;
-            $httpBackend.expectGET('product/' + id).
+            $httpBackend.expectGET('http://localhost:8080/QualysoftWebshop-war/rest/product/' + id).
                     respond({id: id, name: 'Product ' + id, description: 'Description ' + id});
 
             scope = $rootScope.$new();
